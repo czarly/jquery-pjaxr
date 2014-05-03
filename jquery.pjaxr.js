@@ -62,12 +62,12 @@
             return;
         }
 
+        var url = $.isFunction(link.href) ? link.href() : link.href;
+
         // ignore empty href (and link tags without href attribute)
-        if (link.href === "") {
+        if (url === "") {
             return;
         }
-
-        var url = $.isFunction(link.href) ? link.href() : link.href;
 
         var xhr_url = url;
         if (xhr_url.indexOf('pjaxr') == -1) {
