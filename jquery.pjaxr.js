@@ -62,6 +62,11 @@
             return;
         }
 
+        // ignore empty href (and link tags without href attribute)
+        if (link.href === "") {
+            return;
+        }
+
         var url = $.isFunction(link.href) ? link.href() : link.href;
 
         var xhr_url = url;
